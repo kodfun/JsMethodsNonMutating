@@ -1,0 +1,11 @@
+concat
+every
+filter
+find
+indexOf
+join
+map
+reduce
+slice
+some
+toString
