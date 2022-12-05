@@ -1,0 +1,234 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-size: 22px;
+        font-family: 'Source Code Pro', monospace;
+    }
+
+    body {
+        background-color: #1e1e1e;
+        color: white;
+        font-size: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h3 {
+        margin-bottom: 0rem;
+        color: rgb(240, 137, 21);
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    ul {
+        margin: .5rem 0 0 0;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        max-width: 900px;
+    }
+
+    li {
+        background-color: rgba(0, 255, 0, .3);
+        border: 3px solid lime;
+        border-top-width: 0px;
+        border-bottom-width: 3px;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    li>img {
+        width: 100%;
+        height: 100%;
+    }
+
+    li:nth-child(1) {
+        border-top: 3px solid lime;
+    }
+
+    li::before {
+        padding: .1rem;
+        content: attr(data-index);
+        position: absolute;
+        top: center;
+        left: -.6rem;
+        font-size: 1rem;
+        background-color: lime;
+        color: black;
+        border-radius: 20%;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    li>span {
+        font-size: .8rem;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    .all {
+        display: flex;
+        width: 540px;
+        height: 960px;
+        justify-content: space-evenly;
+        padding: 1rem;
+        background: #5f2c82;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #49a09d, #5f2c82);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        position: relative;
+    }
+
+    .task-list {
+        font-size: 1rem;
+    }
+
+    .task {
+        margin: .5rem 0 1.5rem 0;
+        font-size: .7rem;
+        font-weight: bold;
+        background-color: white;
+        color: #20770b;
+        padding: .5rem;
+        position: relative;
+    }
+
+    .task.disabled {
+        color: #aaa
+    }
+
+    .task.disabled::before {
+        font: var(--fa-font-regular);
+        content: "\f058";
+        position: absolute;
+        left: -1.2rem;
+        color: #aaa;
+    }
+
+    .task.active::before {
+        font: var(--fa-font-regular);
+        content: "\f058";
+        position: absolute;
+        left: -1.5rem;
+        color: rgb(0, 255, 0);
+    }
+
+    .task.current::before {
+        font: var(--fa-font-solid);
+        content: "\f35a";
+        position: absolute;
+        left: -1.5rem;
+        color: yellow;
+    }
+
+    .task.current {
+        outline: .3rem solid rgba(255, 255, 0, .7);
+        color: rgb(112, 112, 53);
+    }
+
+    .task.active {
+        outline: .3rem solid rgba(0, 255, 85, 0.7);
+    }
+    .logo {
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        border-radius: 50%;
+    }
+</style>
+<div class="all">
+    <img class="logo" src="Logo.png" />
+    <div class="task-list">
+        <h3>statements</h3>
+        <div class="task disabled">arr = new Array(3);</div>
+        <div class="task disabled">arr.fill("jim");</div>
+        <div class="task disabled">arr[2] = "elon";</div>
+        <div class="task disabled">arr.push("katy", "brad", "jim");</div>
+        <div class="task disabled">arr.splice(1, 1, "bill", "oz");</div>
+        <div class="task disabled">arr.unshift("lady", "will");</div>
+        <div class="task disabled">arr.sort();</div>
+        <div class="task disabled">arr.reverse();</div>
+        <div class="task disabled">arr.copyWithin(7, 0, 1);</div>
+        <div class="task disabled">arr.shift();</div>
+        <div class="task disabled">arr.pop();</div>
+    </div>
+    <div>
+        <h3>arr</h4>
+            <ul id="out"></ul>
+    </div>
+</div>
+
+<script>
+    let arr;
+    let tasks = document.querySelectorAll(".task");
+    let timerId = setInterval(move, 1363);
+    let i = -1;
+    function move() {
+        i++;
+        if (i > 10) {
+            clearInterval(timerId);
+            return;
+        }
+        let task = tasks[i];
+        task.classList.remove("disabled");
+        task.classList.add("current");
+        setTimeout(() => {
+            task.classList.remove("current");
+            task.classList.add("active");
+            eval(task.textContent);
+            write()
+        }, 500);
+    }
+
+    function write(array) {
+        let ul = document.getElementById("out");
+        ul.innerHTML = "";
+        for (let i = 0; i < arr.length; i++) {
+            const element = arr[i];
+            let li = document.createElement("li");
+            //li.textContent = element;
+
+            li.innerHTML = `<img src="img/${element}.png" /><span>${element}</span>`;
+            li.setAttribute("data-index", i);
+            ul.append(li);
+        }
+        console.log(JSON.stringify(arr).split(',').join(', '));
+    }
+</script>
