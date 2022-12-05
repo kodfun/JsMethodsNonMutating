@@ -1,0 +1,127 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+    html, body { 
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-size: 24px;
+        font-family: 'Source Code Pro', monospace;
+    }
+    body {
+        background-color: #1e1e1e;
+        color: white;
+        font-size: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h3 {
+        margin-bottom: 1rem;
+        color: lime;
+        margin-top: 0;
+    }
+    ul {
+        margin: 1rem 0 0 0;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        max-width: 900px;
+    }
+    li {
+        background-color: rgba(0, 255, 0, .3);
+        border: 3px solid lime;
+        border-top-width: 0px;
+        border-bottom-width: 3px;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    li > img {
+        width: 100%;
+        height: 100%;
+    }
+    li:nth-child(1) {
+        border-top: 3px solid lime;
+    }
+    li::before {
+        padding: .1rem;
+        content: attr(data-index);
+        position: absolute;
+        top: center;
+        left: -.6rem;
+        font-size: 1rem;
+        background-color: lime;
+        color: black;
+        border-radius: 20%;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+
+<ul id="out"></ul>
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+     write(arr);
+
+    function write(array) {
+        let ul = document.getElementById("out");
+        ul.innerHTML = "";
+        for (let i = 0; i < arr.length; i++) {
+            const element = arr[i];
+            let li = document.createElement("li");
+            //li.textContent = element;
+
+            li.innerHTML = `<img src="img/${element}.png" />`;
+            li.setAttribute("data-index", i);
+            ul.append(li);
+        }
+        console.log(JSON.stringify(arr).split(',').join(', '));
+    }
+</script>
